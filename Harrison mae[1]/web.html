@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harrison Mae - Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-orange': '#FF6B35',
+                        'custom-blue': '#1E40AF',
+                        'custom-black': '#1F2937'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #FF6B35 0%, #1E40AF 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            transition: all 0.4s ease;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .professional-shadow {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .hero-image {
+            background: linear-gradient(45deg, #FF6B35, #1E40AF);
+            border-radius: 50%;
+            padding: 8px;
+        }
+        .education-card {
+            background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(30,64,175,0.1) 100%);
+            border-left: 4px solid #FF6B35;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50 professional-shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 flex items-center justify-center">
+                            <span class="text-white font-bold text-xl"></span>
+                        </div>
+                         <div class="flex fill">
+                            <img src="Images/Lucian Work.jpg" 
+                                 alt="Harrison Logo" 
+                                 class="w-12 h-12 rounded-2xl object-cover professional-shadow"
+                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkY2QjM1Ii8+CjxyZWN0IHg9IjQwIiB5PSI2MCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI4MCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNODAgODBMMTIwIDgwTDEwMCAxMjBMODAgODBaIiBmaWxsPSIjRkY2QjM1Ii8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxMCI+VUNMYW48L3RleHQ+Cjwvc3ZnPgo='; this.alt='University of Central Lancashire';">
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold text-custom-black">Harrison Mae</h1>
+                            <p class="text-sm text-gray-600">Professional Services</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-custom-black hover:text-custom-orange transition-colors font-medium">Home</a>
+                    <a href="#about" class="text-custom-black hover:text-custom-orange transition-colors font-medium">About</a>
+                    <a href="#services" class="text-custom-black hover:text-custom-orange transition-colors font-medium">Services</a>
+                    <a href="#education" class="text-custom-black hover:text-custom-orange transition-colors font-medium">Education</a>
+                    <a href="#contact" class="text-custom-black hover:text-custom-orange transition-colors font-medium">Contact</a>
+                    <button onclick="openWhatsApp()" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+                        WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="text-white">
+                    <div class="mb-6">
+                        <span class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-full text-sm font-medium">
+                            Professional Developer 
+                        </span>
+                    </div>
+                    <h1 class="text-6xl font-bold mb-6 leading-tight">
+                        Hi, I'm <span class="text-yellow-300">Harrison Mae</span>
+                    </h1>
+                    <p class="text-2xl mb-4 font-light">Computer Science Student</p>
+                    <p class="text-xl mb-8 opacity-90 leading-relaxed">
+                        Delivering cutting-edge technology solutions across web development, mobile applications, 
+                         and creative design services.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <button onclick="openWhatsApp()" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:shadow-lg flex items-center justify-center space-x-2">
+                            <span></span>
+                            <span>Get In Touch</span>
+                        </button>
+                        <a href="#services" class="bg-white text-custom-blue px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors text-center flex items-center justify-center">
+                            View My Work
+                        </a>
+                    </div>
+                    <div class="mt-12 grid grid-cols-3 gap-8 text-center">
+                        <div>
+                            <div class="text-3xl font-bold">5+</div>
+                            <div class="text-sm opacity-80">Services</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold">3 Years+</div>
+                            <div class="text-sm opacity-80">Work Experience</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold">2+</div>
+                            <div class="text-sm opacity-80">Years Of Study</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center lg:justify-end">
+                    <div class="hero-image">
+                        <img src="Me Image 2025-09-21 at 06.49.11_7369fc28.jpg" 
+                             alt="Harrison Mae - Professional Portrait" 
+                             class="w-96 h-96 rounded-full object-cover"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE2MCIgcj0iNjAiIGZpbGw9IiM5Q0E3QjciLz4KPHBhdGggZD0iTTEwMCAzMDBDMTAwIDI1NS44MTcgMTU1LjgxNyAyMDAgMjAwIDIwMFMyOTkuOTk5IDI1NS44MTcgMzAwIDMwMFYzNDBIMTAwVjMwMFoiIGZpbGw9IiM5Q0E3QjciLz4KPHR0ZXh0IHg9IjIwMCIgeT0iMzgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNjc3NDhGIiBmb250LXNpemU9IjE0Ij5MdWNpYW4gTWpvbWJhPC90ZXh0Pgo8L3N2Zz4K'; this.alt='Lucian Mjomba Profile';">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-bold text-custom-black mb-6">About Me</h2>
+                <div class="w-32 h-1 bg-custom-orange mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    A dedicated professional combining both academic excellence with practical expertise across multiple disciplines
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-3xl font-bold text-custom-blue mb-6">Professional Journey</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed text-lg">
+                            Currently pursuing my second year in Computer Science at Chuka University, I bring a unique blend 
+                            of technical expertise and creative knowledge to every project. My educational foundation spans 
+                            from exceptional performance in national examinations to specialized training in graphic design.
+                        </p>
+                        <p class="text-gray-700 mb-8 leading-relaxed text-lg">
+                            With a certificate in graphic design, 
+                            I offer comprehensive solutions that bridge the gap between software development and hardware implementation.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-gradient-to-br from-custom-orange to-red-500 p-6 rounded-2xl text-white">
+                            <h4 class="font-bold text-xl mb-2">Contact</h4>
+                            <p class="text-sm opacity-90">+254757642262</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-custom-blue to-blue-600 p-6 rounded-2xl text-white">
+                            <h4 class="font-bold text-xl mb-2">Email</h4>
+                            <p class="text-sm opacity-90">hmae29349@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-10 rounded-3xl professional-shadow">
+                    <h3 class="text-2xl font-bold text-custom-black mb-8">Professional Highlights</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-custom-orange rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">2019</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-custom-black">KCPE Achievement</h4>
+                                <p class="text-gray-600">Ananda Marga Academy</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-custom-blue rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">2023</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-custom-black">KCSE Achievement</h4>
+                                <p class="text-gray-600">Kenyatta High School</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-custom-blue rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">2023</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-custom-black">Graphics and graphics designing</h4>
+                                <p class="text-gray-600">Adobe training, certificate</p>
+                            </div>
+                        </div>    
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">2024</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-custom-black">University Entry</h4>
+                                <p class="text-gray-600">Chuka University, September</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold">6+</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-custom-black">Service Categories</h4>
+                                <p class="text-gray-600">Professional Services</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-bold text-custom-black mb-6">Professional Services</h2>
+                <div class="w-32 h-1 bg-custom-orange mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Professional solutions tailored to meet your technology and creative requirements
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Website Development -->
+                <div class="service-card bg-white rounded-3xl professional-shadow p-8 hover:shadow-xl">
+                    <div class="mb-8">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" 
+                             alt="Website Development Services" 
+                             class="w-full h-48 object-cover rounded-2xl"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDQwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjRkY2QjM1Ii8+CjxyZWN0IHg9IjUwIiB5PSI1MCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxNTAiIHJ4PSIxMCIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iNzAiIHk9IjcwIiB3aWR0aD0iMjYwIiBoZWlnaHQ9IjIwIiByeD0iNSIgZmlsbD0iI0Y5RkFGQiIvPgo8cmVjdCB4PSI3MCIgeT0iMTAwIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE1IiByeD0iNSIgZmlsbD0iI0Y5RkFGQiIvPgo8cmVjdCB4PSI3MCIgeT0iMTI1IiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjE1IiByeD0iNSIgZmlsbD0iI0Y5RkFGQiIvPgo8L3N2Zz4K'; this.alt='Website Development';">
+                    </div>
+                    <h3 class="text-2xl font-bold text-custom-black mb-4">Website Development</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Modern, responsive websites built with cutting-edge technologies. From business websites to 
+                        e-commerce platforms, I deliver solutions that drive results. I use HTML, CSS, Javascript and Python.
+                    </p>
+                    <button onclick="bookService('Website Development')" class="w-full bg-custom-blue text-white py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-colors">
+                        Book Service
+                    </button>
+                </div>
+
+                <!-- Mobile Apps Development -->
+                <div class="service-card bg-white rounded-3xl professional-shadow p-8 hover:shadow-xl">
+                    <div class="mb-8">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop" 
+                             alt="Mobile App Development Services" 
+                             class="w-full h-48 object-cover rounded-2xl"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDQwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjMUU0MEFGIi8+CjxyZWN0IHg9IjE1MCIgeT0iNDAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTcwIiByeD0iMTUiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjE2MCIgeT0iNjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSIxMCIgcng9IjUiIGZpbGw9IiNGOUZBRkIiLz4KPHJlY3QgeD0iMTYwIiB5PSI4MCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjEwIiByeD0iNSIgZmlsbD0iI0Y5RkFGQiIvPgo8cmVjdCB4PSIxNjAiIHk9IjEwMCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjEwIiByeD0iNSIgZmlsbD0iI0Y5RkFGQiIvPgo8Y2lyY2xlIGN4PSIyMDAiIGN5PSIxOTAiIHI9IjEwIiBmaWxsPSIjRjlGQUZCIi8+Cjwvc3ZnPgo='; this.alt='Mobile App Development';">
+                    </div>
+                    <h3 class="text-2xl font-bold text-custom-black mb-4">Mobile App Development</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Native and cross-platform mobile applications for Android and iOS. User-centric design 
+                        meets powerful functionality for exceptional mobile experiences. I use Swift, Kotlin, Javascript and Flutter.
+                    </p>
+                    <button onclick="bookService('Mobile Apps Development')" class="w-full bg-custom-blue text-white py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-colors">
+                        Book Service
+                    </button>
+                </div>
+
+                <!-- POS Systems Design -->
+                <div class="service-card bg-white rounded-3xl professional-shadow p-8 hover:shadow-xl">
+                    <div class="mb-8">
+                        <img src="Images/POS.jpg" 
+                             alt="POS Systems Design Services" 
+                             class="w-full h-48 object-cover rounded-2xl"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDQwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjMTBCOTgxIi8+CjxyZWN0IHg9IjEwMCIgeT0iNzAiIHdpZHRoPSIyMDAiIGhlaWdodD0iMTEwIiByeD0iMTAiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjEyMCIgeT0iOTAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTUiIHJ4PSI1IiBmaWxsPSIjRjlGQUZCIi8+CjxyZWN0IHg9IjEyMCIgeT0iMTE1IiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjE1IiByeD0iNSIgZmlsbD0iI0Y5RkFGQiIvPgo8cmVjdCB4PSIxMjAiIHk9IjE0MCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxNSIgcng9IjUiIGZpbGw9IiNGOUZBRkIiLz4KPC9zdmc+Cg=='; this.alt='POS Systems Design';">
+                    </div>
+                    <h3 class="text-2xl font-bold text-custom-black mb-4">POS Systems Design</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Complete point-of-sale solutions for retail businesses. Integrated inventory management, 
+                        sales tracking, and customer management systems. I use Python, Swift and C++.
+                    </p>
+                    <button onclick="bookService('POS Systems Design')" class="w-full bg-custom-blue text-white py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-colors">
+                        Book Service
+                    </button>
+                </div>
+
+                
+                  
+                     
+                   
+
+                <!-- Graphics Design -->
+                <div class="service-card bg-white rounded-3xl professional-shadow p-8 hover:shadow-xl">
+                    <div class="mb-8">
+                        <img src="Images/Graphics.jpg" 
+                             alt="Graphics Design Services" 
+                             class="w-full h-48 object-cover rounded-2xl"
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDQwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjRUM0ODk5Ii8+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjEwMCIgcj0iNDAiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjIyMCIgeT0iODAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI0MCIgcng9IjIwIiBmaWxsPSJ3aGl0ZSIvPgo8cG9seWdvbiBwb2ludHM9IjE4MCwxNTAgMjIwLDE1MCAyMDAsMTkwIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K'; this.alt='Graphics Design';">
+                    </div>
+                    <h3 class="text-2xl font-bold text-custom-black mb-4">Graphics Design</h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Creative graphic design solutions including logos, branding, marketing materials, and 
+                        digital assets that make your brand stand out.
+                    </p>
+                    <button onclick="bookService('Graphics Design')" class="w-full bg-custom-blue text-white py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-colors">
+                        Book Service
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-bold text-custom-black mb-6">Educational Excellence</h2>
+                <div class="w-32 h-1 bg-custom-orange mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    A strong academic foundation built through consistent excellence and dedication to learning
+                </p>
+            </div>
+            <div class="space-y-10">
+                <!-- Current Education -->
+                <div class="education-card rounded-3xl p-10 professional-shadow">
+                    <div class="grid lg:grid-cols-4 gap-8 items-center">
+                        <div class="lg:col-span-3">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="bg-custom-blue text-white px-4 py-2 rounded-full text-sm font-medium">Current Program</span>
+                                <span class="text-custom-orange font-semibold">Enrolled September 2024 - Present</span>
+                            </div>
+                            <h3 class="text-3xl font-bold text-custom-black mb-3">BSC Computer Science</h3>
+                            <p class="text-2xl text-custom-orange mb-3 font-semibold">Chuka University</p>
+                            <p class="text-gray-600 text-lg">Second Year Student | Specializing in Software Development, Cloud Computing and Data Science</p>
+                        </div>
+                        <div class="flex justify-center">
+                            <img src="Chuka university image.jpg" 
+                                 alt="Chuka University Campus" 
+                                 class="w-120 h-50 rounded-2xl object-cover professional-shadow"
+                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMUU0MEFGIi8+CjxyZWN0IHg9IjQwIiB5PSI2MCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI4MCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSI2MCIgeT0iODAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI0MCIgcng9IjUiIGZpbGw9IiMxRTQwQUYiLz4KPHR0ZXh0IHg9IjEwMCIgeT0iMTcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxMiI+RWdlcnRvbjwvdGV4dD4KPC9zdmc+Cg=='; this.alt='Egerton University';">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- certificate -->
+                <div class="education-card rounded-3xl p-10 professional-shadow">
+                    <div class="grid lg:grid-cols-4 gap-8 items-center">
+                        <div class="lg:col-span-3">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium">Completed Online</span>
+                                <span class="text-custom-orange font-semibold">Professional Qualification</span>
+                            </div>
+                            <h3 class="text-3xl font-bold text-custom-black mb-3">certificate in graphics & graphics Designing</h3>
+                            <p class="text-2xl text-custom-orange mb-3 font-semibold">Adobe training</p>
+                            <p class="text-gray-600 text-lg">Specialized training in graphics designing</p>
+                        </div>
+                        <div class="flex justify-center">
+                            <img src="Adobe Image 2025-09-21 at 06.44.42_3867462c.jpg" 
+                                 alt="Adobe" 
+                                 class="w-120 h-50 rounded-2xl object-cover professional-shadow"
+                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkY2QjM1Ii8+CjxyZWN0IHg9IjQwIiB5PSI2MCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI4MCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNODAgODBMMTIwIDgwTDEwMCAxMjBMODAgODBaIiBmaWxsPSIjRkY2QjM1Ii8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxMCI+VUNMYW48L3RleHQ+Cjwvc3ZnPgo='; this.alt='University of Central Lancashire';">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- High School -->
+                <div class="education-card rounded-3xl p-10 professional-shadow">
+                    <div class="grid lg:grid-cols-4 gap-8 items-center">
+                        <div class="lg:col-span-3">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-medium">KCSE</span>
+                                <span class="text-custom-orange font-semibold">2023</span>
+                            </div>
+                            <h3 class="text-3xl font-bold text-custom-black mb-3">Kenya Certificate of Secondary Education</h3>
+                            <p class="text-2xl text-custom-orange mb-3 font-semibold">Kenyatta High School</p>
+                            <p class="text-gray-600 text-lg"> <span class="font-bold text-custom-blue text-xl"></span> Excellent Performance in National Examinations | Mathematics, English, Kiswahili, Physics, Biology, Chemistry, History, Computer Studies</p>
+                        </div>
+                        <div class="flex justify-center">
+                            <img src="WhatsApp Image 2025-09-21 at 06.33.11_2dcd2a43.jpg" 
+                                 alt="Kenyatta High School" 
+                                 class="w-120 h-50 rounded-2xl object-cover professional-shadow"
+                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMTA5OTgxIi8+CjxyZWN0IHg9IjQwIiB5PSI2MCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI4MCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSI2MCIgeT0iODAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI0MCIgcng9IjUiIGZpbGw9IiMxMDk5ODEiLz4KPHR0ZXh0IHg9IjEwMCIgeT0iMTcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxMCI+S2VueWF0dGE8L3RleHQ+Cjwvc3ZnPgo='; this.alt='Kenyatta High School';">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Primary School -->
+                <div class="education-card rounded-3xl p-10 professional-shadow">
+                    <div class="grid lg:grid-cols-4 gap-8 items-center">
+                        <div class="lg:col-span-3">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-medium">KCPE</span>
+                                <span class="text-custom-orange font-semibold">2019</span>
+                            </div>
+                            <h3 class="text-3xl font-bold text-custom-black mb-3">Kenya Certificate of Primary Education</h3>
+                            <p class="text-2xl text-custom-orange mb-3 font-semibold">Ananda Marga Academy</p>
+                            <p class="text-gray-600 text-lg"> <span class="font-bold text-custom-blue text-xl"></span> Outstanding Academic Foundation | Mathematics, English, Kiswahili, Science, Social Studies</p>
+                        </div>
+                        <div class="flex justify-center">
+                            <img src="Images/Bright Petals.jpg" 
+                                 alt="Ananda Marga Academy" 
+                                 class="w-120 h-50 rounded-2xl object-cover professional-shadow"
+                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkJCRjI0Ii8+CjxyZWN0IHg9IjQwIiB5PSI2MCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI4MCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjIwIiBmaWxsPSIjRkJCRjI0Ii8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSI5Ij5CcmlnaHQgUGV0YWxzPC90ZXh0Pgo8L3N2Zz4K'; this.alt='Bright Petals Academy';">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="py-24 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-bold text-custom-black mb-6">Book Professional Services</h2>
+                <div class="w-32 h-1 bg-custom-orange mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Ready to start your project? Fill out the form below and I'll contact you via WhatsApp within 24 hours
+                </p>
+            </div>
+            <div class="bg-white rounded-3xl professional-shadow p-12">
+                <form id="bookingForm" onsubmit="submitBooking(event)" class="space-y-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-custom-black font-bold mb-3 text-lg">Full Name *</label>
+                            <input type="text" id="fullName" required class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-custom-orange focus:border-transparent text-lg transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-custom-black font-bold mb-3 text-lg">Phone Number *</label>
+                            <input type="tel" id="phone" required class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-custom-orange focus:border-transparent text-lg transition-all">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-custom-black font-bold mb-3 text-lg">Email Address</label>
+                        <input type="email" id="email" class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-custom-orange focus:border-transparent text-lg transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-custom-black font-bold mb-3 text-lg">Service Required *</label>
+                        <select id="service" required class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-custom-orange focus:border-transparent text-lg transition-all">
+                            <option value="">Select a service</option>
+                            <option value="Website Development">Website Development</option>
+                            <option value="Mobile Apps Development">Mobile Apps Development</option>
+                            <option value="POS Systems Design">POS Systems Design</option>
+                            
+                           <option value="Graphics Design">Graphics Design</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-custom-black font-bold mb-3 text-lg">Project Description *</label>
+                        <textarea id="description" required rows="5" class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-custom-orange focus:border-transparent text-lg transition-all" placeholder="Please provide detailed information about your project requirements, timeline, and any specific needs..."></textarea>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-custom-black font-bold mb-3 text-lg">Preferred Timeline</label>
+                            <select id="timeline" class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-custom-orange focus:border-transparent text-lg transition-all">
+                                <option value="">Select timeline</option>
+                                <option value="ASAP">As soon as possible</option>
+                                <option value="1 week">Within 1 week</option>
+                                <option value="2 weeks">Within 2 weeks</option>
+                                <option value="1 month">Within 1 month</option>
+                                <option value="Flexible">Flexible</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-custom-black font-bold mb-3 text-lg">Budget Range (Optional)</label>
+                            <select id="budget" class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-custom-orange focus:border-transparent text-lg transition-all">
+                                <option value="">Select budget range</option>
+                                <option value="Under KSh 50,000">Under KSh 50,000</option>
+                                <option value="KSh 50,000 - 100,000">KSh 50,000 - 100,000</option>
+                                <option value="KSh 100,000 - 200,000">KSh 100,000 - 200,000</option>
+                                <option value="Above KSh 200,000">Above KSh 200,000</option>
+                                <option value="Discuss">Let's discuss</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-custom-orange to-custom-blue text-white py-6 rounded-xl font-bold text-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                        Send Booking Request via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-bold text-custom-black mb-6">Get In Touch</h2>
+                <div class="w-32 h-1 bg-custom-orange mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Ready to discuss your project? Choose your preferred method of communication
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="text-center p-10 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl professional-shadow hover:shadow-xl transition-all">
+                    <div class="w-20 h-20 bg-custom-orange rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-custom-black mb-4">Phone Call</h3>
+                    <p class="text-gray-600 mb-2 text-lg">+254757642262</p>
+                    <p class="text-gray-500 mb-6">Available 24 Hours</p>
+                    <button onclick="callPhone()" class="bg-custom-orange text-white px-8 py-3 rounded-xl font-semibold hover:bg-orange-600 transition-colors">
+                        Call Now
+                    </button>
+                </div>
+                <div class="text-center p-10 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl professional-shadow hover:shadow-xl transition-all">
+                    <div class="w-20 h-20 bg-custom-blue rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-custom-black mb-4">Email</h3>
+                    <p class="text-gray-600 mb-2 text-lg">hmae29349@gmail.com</p>
+                    <p class="text-gray-500 mb-6">Response within 24 hours</p>
+                    <button onclick="sendEmail()" class="bg-custom-blue text-white px-8 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors">
+                        Send Email
+                    </button>
+                </div>
+                <div class="text-center p-10 bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl professional-shadow hover:shadow-xl transition-all">
+                    <div class="w-20 h-20 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-custom-black mb-4">WhatsApp</h3>
+                    <p class="text-gray-600 mb-2 text-lg">Instant Messaging</p>
+                    <p class="text-gray-500 mb-6">Quick response guaranteed</p>
+                    <button onclick="openWhatsApp()" class="bg-green-500 text-white px-8 py-3 rounded-xl font-semibold hover:bg-green-600 transition-colors">
+                        Chat Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-custom-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-6">
+                    <div class="w-20 h-20 bg-gradient-to-r from-custom-orange to-custom-blue rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl"></span>
+                         <div class="flex fill">
+                            <img src="Images/Lucian Work.jpg" 
+                                 alt="Lucian Logo" 
+                                 class="w-25 h-25 rounded-2xl object-cover professional-shadow"
+                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkY2QjM1Ii8+CjxyZWN0IHg9IjQwIiB5PSI2MCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI4MCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNODAgODBMMTIwIDgwTDEwMCAxMjBMODAgODBaIiBmaWxsPSIjRkY2QjM1Ii8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTcwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIxMCI+VUNMYW48L3RleHQ+Cjwvc3ZnPgo='; this.alt='University of Central Lancashire';">
+                        </div>
+                    </div>
+                    <h3 class="text-3xl font-bold text-custom-orange">Harrisonn Mae</h3>
+                </div>
+                <p class="text-gray-300 mb-8 text-lg">Professional Technology & Creative Services</p>
+                <div class="flex justify-center space-x-6 mb-10">
+                    <button onclick="openWhatsApp()" class="bg-green-500 hover:bg-green-600 px-8 py-3 rounded-xl transition-colors font-semibold">
+                        WhatsApp
+                    </button>
+                    <button onclick="sendEmail()" class="bg-custom-blue hover:bg-blue-700 px-8 py-3 rounded-xl transition-colors font-semibold">
+                        Email
+                    </button>
+                    <button onclick="callPhone()" class="bg-custom-orange hover:bg-orange-600 px-8 py-3 rounded-xl transition-colors font-semibold">
+                        Call
+                    </button>
+                </div>
+                <div class="border-t border-gray-700 pt-8">
+                    <p class="text-gray-400">&copy; 2025 Harrison Mae. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp">
+        <button onclick="openWhatsApp()" class="bg-green-500 hover:bg-green-600 text-white p-5 rounded-full professional-shadow hover:shadow-2xl transition-all">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        // WhatsApp Integration
+        function openWhatsApp(message = '') {
+            const phoneNumber = '254757642262';
+            const defaultMessage = message || 'Hello Harrison! I\'m interested in your professional services. Can we discuss my project requirements?';
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        // Book specific service
+        function bookService(serviceName) {
+            const message = `Hi Lucian! I would like to book your ${serviceName} service. Can we discuss the project details and timeline?`;
+            openWhatsApp(message);
+        }
+
+        // Contact functions
+        function callPhone() {
+            window.open('tel:+254745553539', '_blank', 'noopener,noreferrer');
+        }
+
+        function sendEmail() {
+            const subject = 'Professional Service Inquiry - Harrison Mae';
+            const body = 'Hello Harrison,\n\nI am interested in your professional services and would like to discuss my project requirements.\n\nBest regards';
+            window.open(`mailto:hmae29349@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank', 'noopener,noreferrer');
+        }
+
+        // Enhanced form submission
+        function submitBooking(event) {
+            event.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const description = document.getElementById('description').value;
+            const timeline = document.getElementById('timeline').value;
+            const budget = document.getElementById('budget').value;
+
+            const message = `🔥 PROFESSIONAL SERVICE BOOKING REQUEST 🔥
+
+👤 Client Name: ${fullName}
+📱 Phone: ${phone}
+📧 Email: ${email || 'Not provided'}
+🛠️ Service Required: ${service}
+📅 Preferred Timeline: ${timeline || 'Not specified'}
+💰 Budget Range: ${budget || 'To be discussed'}
+
+📝 Project Description:
+${description}
+
+I look forward to working with you on this project. Please let me know your availability for a detailed discussion.
+
+Best regards,
+${fullName}`;
+
+            openWhatsApp(message);
+            
+            // Reset form with animation
+            document.getElementById('bookingForm').reset();
+            
+            // Show enhanced success message
+            const successMessage = `✅ Your booking request has been sent successfully!\n\n📱 I'll contact you via WhatsApp within 24 hours to discuss your ${service} project.\n\nThank you for choosing my professional services!`;
+            alert(successMessage);
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Auto-fill service in booking form when coming from service cards
+        function bookService(serviceName) {
+            // Scroll to booking section
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+            
+            // Wait for scroll to complete, then fill the form
+            setTimeout(() => {
+                document.getElementById('service').value = serviceName;
+                document.getElementById('service').focus();
+            }, 1000);
+        }
+
+        // Add loading animation for buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (this.type !== 'submit') {
+                        this.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            this.style.transform = 'scale(1)';
+                        }, 150);
+                    }
+                });
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'981f241ef50b94f3',t:'MTc1ODM0ODQzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
